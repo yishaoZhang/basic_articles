@@ -1,0 +1,5 @@
+# dependency directors
+node_modules/
+
+# All intellij settings
+.idea
