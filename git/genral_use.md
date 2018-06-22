@@ -91,11 +91,13 @@
         + 理解从rebase根源理解，rebase改变两个分支共同祖先节点，一般为目标分支最新head
         + 假设master为 a --> b --> c --> d dev由c处分离，而d为非dev分支提交
         + 接上，dev git pull master // 此时将master处的d提交将pull至dev本地仓
-        + 真实情况 远程可能提交次数特别多, 不想拉至本地
-            + git pull --rebase(-r) origin [shared branch]
-            + 对于目标分支过滤merge点？？ 
-            + 上述待继，当前测试无论是否使用rebase 均将 d 提交拉至dev本地仓
-            + 如果对master 受用，个人认为 --squash参数更好用。
+        + git checkout master // 切换至公共分支master(本地)
+        + git pull // 拉取远程
+            + 此时merge 将产生两次commit
+            + 一次为 master git pull origin dev 产生的 commit
+            + 一次为 默认 master merge dev 提交（系统默认）
+        + git pull --rebase
+            + 此时将 默认 master merge dev 提交（系统默认）省略。
     + rebase 提交？？？？
 ## 临时BUG修改 ##
     + git一般分支策略
