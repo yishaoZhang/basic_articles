@@ -117,4 +117,30 @@
         + bug分支一般都会即时删除，至于是否保留该分支各记录，意义不大。
 
 ## 分支及标签管理 ##
+    + 分支管理
+        + 切换
+            + git checkout -b branchName // -b 如无则创建该分支
+        + 本地分支初次提交（将本地与远程关联）
+            + git push -u origin branchname
+        + 删除本地分支
+            + git branch -D branch-name
+        + 删除远程分支
+            + git push -d origin branch-name
+    + 标签管理
+        + tag用处：如app各版本，建议tag保存，而非分支保存。部分工作运维通过tag拉远程代码，而非分支
+        + 本地增删查
+            + git tag -a tag-name -m "message about add tag name" // 增
+            + git tag -d tag-name // 删
+            + git tag // 查
+        + 远程增删查切换
+            + git push tag-name
+            + git push origin -d tag-name // 删，与分支操作命令一样，不建议分支与标签名字一样。如果一样会发生什么？
+                + git 原则不允许？？ // 如已存在 v1.0 tag-name 不允许本地v1.0分支提交
+            + git tag -l // 本看远程分支
+            + git checkout tag-name // 切换
+
+## 补充说明 ##
++ git 操作branchname, 将暗指本地分支
++ 接上，添加origin条件，即为远程分支
+
 
