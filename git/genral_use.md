@@ -100,44 +100,44 @@
             + 此时将 默认 master merge dev 提交（系统默认）省略。
     + rebase 提交？？？？
 ## 临时BUG修改 ##
-    + git一般分支策略
-        + master 与正服保持一致，或与正服编译前代码保持一致
-        + dev 开发分支，当前测试代码
-        + v1.0 // 开发正式代码，备测
-            + v1.0_zys // 开发最新代码
-    + 假定 开发者在 v1.0_zys 开发，突发bug
-        + 因为在私有分支，可以直接提交一次，目的保存当前代码 // 不建议
-        + stash
-            + git stash save "stash name" // 默认1
-            + git stash pop "stash name" // 启用并删除
-            + git stash apply "stash name" // 启用且保存
-            + git stash list // 查看所有
-            + git stash drop // 删除
-        + 建议 master 分支另起bug分支
-        + bug分支一般都会即时删除，至于是否保留该分支各记录，意义不大。
++ git一般分支策略
+    + master 与正服保持一致，或与正服编译前代码保持一致
+    + dev 开发分支，当前测试代码
+    + v1.0 // 开发正式代码，备测
+        + v1.0_zys // 开发最新代码
++ 假定 开发者在 v1.0_zys 开发，突发bug
+    + 因为在私有分支，可以直接提交一次，目的保存当前代码 // 不建议
+    + stash
+        + git stash save "stash name" // 默认1
+        + git stash pop "stash name" // 启用并删除
+        + git stash apply "stash name" // 启用且保存
+        + git stash list // 查看所有
+        + git stash drop // 删除
+    + 建议 master 分支另起bug分支
+    + bug分支一般都会即时删除，至于是否保留该分支各记录，意义不大。
 
 ## 分支及标签管理 ##
-    + 分支管理
-        + 切换
-            + git checkout -b branchName // -b 如无则创建该分支
-        + 本地分支初次提交（将本地与远程关联）
-            + git push -u origin branchname
-        + 删除本地分支
-            + git branch -D branch-name
-        + 删除远程分支
-            + git push -d origin branch-name
-    + 标签管理
-        + tag用处：如app各版本，建议tag保存，而非分支保存。部分工作运维通过tag拉远程代码，而非分支
-        + 本地增删查
-            + git tag -a tag-name -m "message about add tag name" // 增
-            + git tag -d tag-name // 删
-            + git tag // 查
-        + 远程增删查切换
-            + git push tag-name
-            + git push origin -d tag-name // 删，与分支操作命令一样，不建议分支与标签名字一样。如果一样会发生什么？
-                + git 原则不允许？？ // 如已存在 v1.0 tag-name 不允许本地v1.0分支提交
-            + git tag -l // 本看远程分支
-            + git checkout tag-name // 切换
++ 分支管理
+    + 切换
+        + git checkout -b branchName // -b 如无则创建该分支
+    + 本地分支初次提交（将本地与远程关联）
+        + git push -u origin branchname
+    + 删除本地分支
+        + git branch -D branch-name
+    + 删除远程分支
+        + git push -d origin branch-name
++ 标签管理
+    + tag用处：如app各版本，建议tag保存，而非分支保存。部分工作运维通过tag拉远程代码，而非分支
+    + 本地增删查
+        + git tag -a tag-name -m "message about add tag name" // 增
+        + git tag -d tag-name // 删
+        + git tag // 查
+    + 远程增删查切换
+        + git push origin tag-name
+        + git push origin -d tag-name // 删，与分支操作命令一样，不建议分支与标签名字一样。如果一样会发生什么？
+            + git 原则不允许？？ // 如已存在 v1.0 tag-name 不允许本地v1.0分支提交
+        + git tag -l // 本看远程分支
+        + git checkout tag-name // 切换
 
 ## 补充说明 ##
 + git 操作branchname, 将暗指本地分支
