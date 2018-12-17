@@ -12,6 +12,8 @@
             + 本地仓与远程仓已关联，初次提交仍需将本地分支与远程分支关联，即 -u
             + -u // 即 --set=upstream
             + 假定将本地分支内容推送至远程，远程不存在该分支，初次推送，需加 -u
+        + 上述直接提交可能有误，需将本地分支直接关联到远程分支，然后进行提交
+          + git branch --set-upstream-to=origin/<remote-branch> <local-branch>
 + 远程仓开始
     + 打开远程仓，切换分支，复制url（ssh, https均可）
     + git clone "url"
