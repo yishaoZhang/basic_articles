@@ -6,7 +6,7 @@
         + git remote -v // 可以查看远程仓
         + 修改关联远程仓
             + git remote remove origin // 删除
-            + git remote add origin "ssh url"
+            + git remote add origin "url"
     + 初次提交（假定相关内容已进暂存区）
         + git push -u origin master
             + 本地仓与远程仓已关联，初次提交仍需将本地分支与远程分支关联，即 -u
@@ -142,5 +142,6 @@
 ## 补充说明 ##
 + git 操作branchname, 将暗指本地分支
 + 接上，添加origin条件，即为远程分支
++ 对于windows系统, 初次密码写错,将保存在系统凭据中,需删除
 
 
