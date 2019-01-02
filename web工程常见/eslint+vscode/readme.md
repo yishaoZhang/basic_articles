@@ -21,3 +21,7 @@
   "eslint.alwaysShowStatus": true,
 }
 ```
+
+## vscode自动保存问题 ##
++ 除vscode可以通过JSON配置自动保存
+  + 某些第三方插件亦可造成自动保存,如 html + css + js等
