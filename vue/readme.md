@@ -25,3 +25,7 @@
 + 使用require?
   + 为何组件需要用require来引用??
   + 大部分组件用import?
+
+## element upload data传参 ##
++ :data="extraParams"
+  + 需写在action 之后? 后端报参数异常
