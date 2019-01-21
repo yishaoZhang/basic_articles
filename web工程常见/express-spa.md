@@ -4,7 +4,7 @@
   + 文件更新pm2 不重启?
     + linux进程关闭
       + ps -ef | grep 'node'
-      + kill 'processID'
+      + kill 'processID'v
 + vue spa使用history模式时,刷新问题?
   + express使用 'connect-history-api-fallback'
     + npm install connect-history-api-fallback --save
