@@ -29,3 +29,6 @@
 ## element upload data传参 ##
 + :data="extraParams"
   + 需写在action 之后? 后端报参数异常
+## element固定表头 ##
++ max-height='500'
+  + 勿加 'px'
