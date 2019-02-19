@@ -15,5 +15,7 @@
 + mkdir ~/.npm-global //创建
 + npm config set prefix '~/.npm-global' // 重新指向
 + export PATH=~/.npm-global/bin:$PATH // 设置全局路径
+  + 此处拼写有误, ~是本账号相对路径? 改成绝对就行, 如下
+  + export PATH=/root/.npm-global/bin:$PATH
 + source ~/.profile // 更新全局配制
   + 机子不同, 一般在 /etc/profile
